@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safar-E-Shimal - Northern Paradise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Poppins:wght@400;500;600;700&family=Rubik:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <img
+        class="hero-bg"
+        src="assets/hero-bg.png"
+        alt="Snow-capped mountains reflected in a valley pond"
+        width="1440"
+        height="941"
+      />
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a href="#home" class="logo" aria-label="Safar-E-Shimal home">
+            <img src="assets/safar-e-shimal-logo.png" alt="" />
+            <span class="logo-text">Safar-E-Shimal</span>
+          </a>
+          <nav aria-label="Main navigation">
+            <ul class="nav-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+          </nav>
+          <div class="menu-wrap">
+            <button
+              class="menu-button"
+              type="button"
+              aria-label="Open menu"
+              aria-expanded="false"
+              aria-controls="site-menu"
+            >
+              <span class="menu-button__icon" aria-hidden="true"></span>
+              <span>Menu</span>
+            </button>
+            <ul class="menu-panel" id="site-menu" hidden>
+              <li><a href="options.html">Tour Options</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <div class="container hero-content">
+        <h1 class="hero-title">
+          Your Journey to the Northern Paradise Begins Here
+        </h1>
+        <p class="hero-subtitle">
+          Curated tours across Pakistan’s breathtaking northern regions with
+          comfort, safety, and unforgettable experiences
+        </p>
+
+        <form class="search-form" action="options.html" method="get">
+          <div class="search-field search-field--dropdown field-dropdown">
+            <label for="destination">Destination</label>
+            <input
+              id="destination"
+              name="destination"
+              type="text"
+              placeholder="Enter your destination"
+              autocomplete="off"
+              aria-expanded="false"
+              aria-controls="destination-options"
+            />
+            <ul
+              class="dropdown-panel"
+              id="destination-options"
+              role="listbox"
+              aria-label="Destination options"
+              hidden
+            >
+              <li role="option" data-value="Hunza Valley" data-region="Gilgit-Baltistan">
+                <span class="dropdown-place">Hunza Valley</span>
+                <span class="dropdown-region">Gilgit-Baltistan</span>
+              </li>
+              <li role="option" data-value="Skardu" data-region="Gilgit-Baltistan">
+                <span class="dropdown-place">Skardu</span>
+                <span class="dropdown-region">Gilgit-Baltistan</span>
+              </li>
+              <li role="option" data-value="Naran Kaghan" data-region="Khyber Pakhtunkhwa">
+                <span class="dropdown-place">Naran Kaghan</span>
+                <span class="dropdown-region">Khyber Pakhtunkhwa</span>
+              </li>
+              <li role="option" data-value="Swat Valley" data-region="Khyber Pakhtunkhwa">
+                <span class="dropdown-place">Swat Valley</span>
+                <span class="dropdown-region">Khyber Pakhtunkhwa</span>
+              </li>
+              <li role="option" data-value="Murree" data-region="Punjab">
+                <span class="dropdown-place">Murree</span>
+                <span class="dropdown-region">Punjab</span>
+              </li>
+            </ul>
+          </div>
+          <div class="search-field search-field--date">
+            <label for="checkin">Check In Date</label>
+            <span class="date-wrap">
+              <input id="checkin" name="checkin" type="date" aria-label="Check in date" />
+            </span>
+          </div>
+          <div class="search-field search-field--dropdown search-field--guests field-dropdown">
+            <label for="guests">Guests</label>
+            <input
+              id="guests"
+              name="guests"
+              type="text"
+              placeholder="Add Guests"
+              readonly
+              aria-expanded="false"
+              aria-controls="guest-options"
+            />
+            <input type="hidden" name="guest_count" id="guest_count" value="" />
+            <ul
+              class="dropdown-panel dropdown-panel--guests"
+              id="guest-options"
+              role="listbox"
+              aria-label="Guest options"
+              hidden
+            >
+              <li class="dropdown-header">
+                <span>Guests</span>
+                <span class="dropdown-header-rate">Per booking</span>
+              </li>
+              <li role="option" data-value="1" data-label="1 Guest">
+                <span class="dropdown-place">1 Guest</span>
+                <span class="dropdown-price">Solo</span>
+              </li>
+              <li role="option" data-value="2" data-label="2 Guests">
+                <span class="dropdown-place">2 Guests</span>
+                <span class="dropdown-price">Couple</span>
+              </li>
+              <li role="option" data-value="4" data-label="4 Guests">
+                <span class="dropdown-place">4 Guests</span>
+                <span class="dropdown-price">Family</span>
+              </li>
+              <li role="option" data-value="6" data-label="6 Guests">
+                <span class="dropdown-place">6 Guests</span>
+                <span class="dropdown-price">Group</span>
+              </li>
+            </ul>
+          </div>
+          <div class="search-field">
+            <label for="pricing">Pricing</label>
+            <select id="pricing" name="pricing" aria-label="Select pricing range">
+              <option value="">Any budget</option>
+              <option value="economy">Under PKR 15,000</option>
+              <option value="standard">PKR 15,000 to PKR 20,000</option>
+              <option value="premium">PKR 20,000 to PKR 25,000</option>
+              <option value="luxury">PKR 25,000+</option>
+            </select>
+          </div>
+          <button class="search-btn" type="submit">Search Now</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section 1: Adventures -->
+    <section class="section-adventures" id="portfolio">
+      <div class="container">
+        <div class="adventure-grid">
+          <article class="adventure-card">
+            <svg
+              class="adventure-icon"
+              viewBox="0 0 68 54"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 44L22 18L34 32L48 12L60 44H8Z"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="adventure-divider" aria-hidden="true"></div>
+            <div class="adventure-body">
+              <h3>Mountain<br />Adventure</h3>
+              <p>
+                Travel isn't about reaching the destination, it's about
+                collecting the stories along the way.
+              </p>
+            </div>
+          </article>
+
+          <article class="adventure-card">
+            <svg
+              class="adventure-icon"
+              viewBox="0 0 68 54"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <circle cx="18" cy="20" r="10" stroke="currentColor" stroke-width="2.5" />
+              <path
+                d="M34 44V24L44 14L54 44H34Z"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="adventure-divider" aria-hidden="true"></div>
+            <div class="adventure-body">
+              <h3>Forest<br />Adventure</h3>
+              <p>
+                Travel isn't about reaching the destination, it's about
+                collecting the stories along the way.
+              </p>
+            </div>
+          </article>
+
+          <article class="adventure-card">
+            <svg
+              class="adventure-icon"
+              viewBox="0 0 68 54"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 40C12 32 20 26 34 26C48 26 56 32 56 40"
+                stroke="currentColor"
+                stroke-width="2.5"
+              />
+              <path d="M34 12V26" stroke="currentColor" stroke-width="2.5" />
+              <circle cx="44" cy="10" r="5" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <div class="adventure-divider" aria-hidden="true"></div>
+            <div class="adventure-body">
+              <h3>Beach<br />Adventure</h3>
+              <p>
+                Travel isn't about reaching the destination, it's about
+                collecting the stories along the way.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Quote -->
+    <section class="section-quote" id="about">
+      <div class="container quote-layout">
+        <div class="quote-block">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <p class="quote-text">
+            The world is a canvas, and your journey is the brushstroke. Paint it
+            with adventure, color it with laughter, and frame it with
+            <span class="accent">unforgettable</span> memories.
+          </p>
+          <a href="portfolio.html" class="btn-primary">Get started</a>
+        </div>
+        <div class="quote-image-wrap">
+          <img
+            src="assets/northern-areas.png"
+            alt="Pakistan northern areas — green valley and snow-covered peaks"
+            width="610"
+            height="357"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Vacation -->
+    <section class="section-vacation">
+      <div class="container vacation-grid">
+        <div class="vacation-slider" data-vacation-slider>
+          <div class="vacation-slide-track">
+            <img
+              id="vacation-slide-image"
+              class="vacation-slide-image"
+              src="assets/northern-areas.png"
+              alt="Summer vacation destination"
+              width="505"
+              height="516"
+            />
+            <img
+              id="vacation-slide-next-image"
+              class="vacation-slide-image"
+              src="assets/northern-areas.png"
+              alt=""
+              width="505"
+              height="516"
+              aria-hidden="true"
+            />
+          </div>
+          <div class="vacation-slider-overlay">
+            <p>Let’s Start Your Vacation</p>
+            <h3 id="vacation-slide-title">Summer Time in Beach</h3>
+            <div class="slider-nav">
+              <button type="button" aria-label="Previous slide" data-slide-prev>‹</button>
+              <button type="button" aria-label="Next slide" data-slide-next>›</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="vacation-content">
+          <h2>
+            Lets Us Introduce <br />an <span class="accent">Unforgettable</span
+            ><br />
+            Vacation Experience
+          </h2>
+          <p>
+            The movement of people between distant geographical locations. To
+            live is the rarest thing in the world. Most people exist, that is
+            all.
+          </p>
+          <div class="stats-row">
+            <div class="stat-item">
+              <strong>20</strong>
+              <span>Experience</span>
+            </div>
+            <div class="stat-item">
+              <strong>250+</strong>
+              <span>Exclusive Client</span>
+            </div>
+            <div class="stat-item">
+              <strong>500+</strong>
+              <span>Client Feedback</span>
+            </div>
+          </div>
+          <a href="options.html" class="btn-primary btn-primary--round">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Discover -->
+    <section class="section-discover" id="blog">
+      <div class="container">
+        <h2>Discover More The <span class="accent">World</span></h2>
+        <p class="section-lead">
+          The movement of people between distant geographical locations.
+        </p>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-card-image" role="img" aria-label="Article thumbnail"></div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>
+              How do routines and habits influence our daily life, both at work
+              and at home?
+            </p>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image" role="img" aria-label="Article thumbnail"></div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>
+              How do routines and habits influence our daily life, both at work
+              and at home?
+            </p>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image" role="img" aria-label="Article thumbnail"></div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>
+              How do routines and habits influence our daily life, both at work
+              and at home?
+            </p>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image" role="img" aria-label="Article thumbnail"></div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>
+              How do routines and habits influence our daily life, both at work
+              and at home?
+            </p>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image" role="img" aria-label="Article thumbnail"></div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>
+              How do routines and habits influence our daily life, both at work
+              and at home?
+            </p>
+          </article>
+          <article class="blog-card">
+            <div class="blog-card-image" role="img" aria-label="Article thumbnail"></div>
+            <div class="blog-card-line" aria-hidden="true"></div>
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>
+              How do routines and habits influence our daily life, both at work
+              and at home?
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: CTA -->
+    <section class="section-cta">
+      <div class="section-cta-bg" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="cta-title">
+          The world whispers to those who travel, telling tales of wonder and
+          inviting them to dream with open eyes.
+        </h2>
+        <p class="cta-subtitle">
+          The movement of people between distant geographical locations.
+        </p>
+        <div class="cta-actions">
+          <button type="button" class="btn-primary">Learn More</button>
+          <a href="#">Check Our Terms and Condition</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="logo">
+              <img src="assets/safar-e-shimal-logo.png" alt="" />
+              <span class="logo-text">Safar-E-Shimal</span>
+            </div>
+            <p>
+              Remember, these are just a few ideas to get you started. Feel free
+              to mix and match them, add your own personal touch, and let your
+              words paint a picture of the adventures that await those who dare
+              to explore
+            </p>
+            <div class="footer-newsletter">
+              <h3>Let’s collaborate with us and get our newslatter</h3>
+              <form class="email-form" action="#" method="post">
+                <input
+                  type="email"
+                  placeholder="Input your email here"
+                  aria-label="Email address"
+                />
+                <button type="submit" aria-label="Subscribe">➤</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Discover Your New Experience</h3>
+            <div class="footer-columns">
+              <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                  <li><a href="#">World Tour</a></li>
+                  <li><a href="#">Restaurant</a></li>
+                  <li><a href="#">Book Room</a></li>
+                  <li><a href="#">Destination</a></li>
+                  <li><a href="#">Private Travel</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                  <li><a href="#">Account</a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Condition</a></li>
+                  <li><a href="#">Privacy</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Link</h4>
+                <ul>
+                  <li><a href="#">Trending Tours</a></li>
+                  <li><a href="#">Flight Booking</a></li>
+                  <li><a href="#">Testimonial</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="#">Term Condition</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">t</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+          <p>Copyright © 2024 Safar-E-Shimal. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/search-ui.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

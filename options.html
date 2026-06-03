@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Options - Safar-E-Shimal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Poppins:wght@400;500;600;700&family=Rubik:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/options.css" />
+  </head>
+  <body class="options-page">
+    <header class="options-header">
+      <div class="container options-header-inner">
+        <a href="index.html" class="logo" aria-label="Safar-E-Shimal home">
+          <img src="assets/safar-e-shimal-logo.png" alt="" />
+          <span class="logo-text">Safar-E-Shimal</span>
+        </a>
+        <a href="index.html" class="options-back">← Back to home</a>
+      </div>
+    </header>
+
+    <main class="options-main">
+      <div class="container">
+        <div class="options-intro">
+          <h1 class="options-heading">
+            Available <span class="accent">Tour Options</span>
+          </h1>
+          <p id="results-count" class="options-count">Loading results...</p>
+          <div id="search-summary" class="options-filters" aria-label="Your search filters"></div>
+        </div>
+
+        <form
+          id="options-search-form"
+          class="search-form options-search-form"
+          action="options.html"
+          method="get"
+        >
+          <div class="search-field">
+            <label for="destination">Destination</label>
+            <input
+              id="destination"
+              name="destination"
+              type="text"
+              placeholder="Enter your destination"
+              autocomplete="off"
+            />
+          </div>
+          <div class="search-field">
+            <label for="checkin">Check In Date</label>
+            <input id="checkin" name="checkin" type="text" placeholder="Add Dates" />
+          </div>
+          <div class="search-field">
+            <label for="guests">Guests</label>
+            <input id="guests" name="guests" type="text" placeholder="Add Guests" readonly />
+            <input type="hidden" name="guest_count" id="guest_count" value="" />
+          </div>
+          <div class="search-field">
+            <label for="pricing">Pricing</label>
+            <select id="pricing" name="pricing" aria-label="Select pricing range">
+              <option value="">Any budget</option>
+              <option value="economy">Under PKR 15,000</option>
+              <option value="standard">PKR 15,000 to PKR 20,000</option>
+              <option value="premium">PKR 20,000 to PKR 25,000</option>
+              <option value="luxury">PKR 25,000+</option>
+            </select>
+          </div>
+          <button class="search-btn" type="submit">Search Now</button>
+        </form>
+
+        <div id="options-empty" class="options-empty" hidden>
+          <p>No tours match your search. Try another destination, budget, or fewer guests.</p>
+          <a href="index.html" class="btn-primary">Search again</a>
+        </div>
+
+        <div id="options-list" class="options-list">
+          <article
+            class="option-card"
+            data-price="19999"
+            data-max-guests="8"
+            data-search="hunza hunza valley karimabad attabad lake gilgit-baltistan hunza valley explorer"
+          >
+            <div class="option-card-image">
+              <img src="assets/northern-areas.png" alt="Hunza Valley Explorer" loading="lazy" />
+              <span class="option-tier">PKR 19,999 / person</span>
+            </div>
+            <div class="option-card-body">
+              <p class="option-region">Gilgit-Baltistan</p>
+              <h2 class="option-title">Hunza Valley Explorer</h2>
+              <p class="option-destination"><span>📍</span> Hunza</p>
+              <ul class="option-highlights">
+                <li>Karimabad</li>
+                <li>Attabad Lake</li>
+                <li>Eagle's Nest</li>
+              </ul>
+              <div class="option-meta">
+                <span>5 days / 4 nights</span>
+                <span>Up to 8 guests</span>
+              </div>
+              <div class="option-footer">
+                <div class="option-price">
+                  <strong>PKR 19,999</strong>
+                  <span class="option-price-note">per person</span>
+                  <p class="option-price-total option-price-total-js" hidden></p>
+                </div>
+                <a class="btn-primary btn-primary--round option-book" href="booking.html?tour=hunza">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="option-card"
+            data-price="24999"
+            data-max-guests="10"
+            data-search="skardu deosai shangrila satpara gilgit-baltistan skardu deosai safari"
+          >
+            <div class="option-card-image">
+              <img src="assets/northern-areas.png" alt="Skardu and Deosai Safari" loading="lazy" />
+              <span class="option-tier">PKR 24,999 / person</span>
+            </div>
+            <div class="option-card-body">
+              <p class="option-region">Gilgit-Baltistan</p>
+              <h2 class="option-title">Skardu &amp; Deosai Safari</h2>
+              <p class="option-destination"><span>📍</span> Skardu</p>
+              <ul class="option-highlights">
+                <li>Deosai Plains</li>
+                <li>Shangrila Resort</li>
+                <li>Satpara Lake</li>
+              </ul>
+              <div class="option-meta">
+                <span>7 days / 6 nights</span>
+                <span>Up to 10 guests</span>
+              </div>
+              <div class="option-footer">
+                <div class="option-price">
+                  <strong>PKR 24,999</strong>
+                  <span class="option-price-note">per person</span>
+                  <p class="option-price-total option-price-total-js" hidden></p>
+                </div>
+                <a class="btn-primary btn-primary--round option-book" href="booking.html?tour=skardu">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="option-card"
+            data-price="14999"
+            data-max-guests="6"
+            data-search="fairy meadows nanga parbat diamer base camp raikot fairy meadows trek"
+          >
+            <div class="option-card-image">
+              <img src="assets/hero-bg.png" alt="Fairy Meadows Trek" loading="lazy" />
+              <span class="option-tier">PKR 14,999 / person</span>
+            </div>
+            <div class="option-card-body">
+              <p class="option-region">Diamer</p>
+              <h2 class="option-title">Fairy Meadows Trek</h2>
+              <p class="option-destination"><span>📍</span> Nanga Parbat</p>
+              <ul class="option-highlights">
+                <li>Base camp views</li>
+                <li>Raikot Bridge</li>
+                <li>Mountain sunrise</li>
+              </ul>
+              <div class="option-meta">
+                <span>4 days / 3 nights</span>
+                <span>Up to 6 guests</span>
+              </div>
+              <div class="option-footer">
+                <div class="option-price">
+                  <strong>PKR 14,999</strong>
+                  <span class="option-price-note">per person</span>
+                  <p class="option-price-total option-price-total-js" hidden></p>
+                </div>
+                <a class="btn-primary btn-primary--round option-book" href="booking.html?tour=fairy">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="option-card"
+            data-price="19999"
+            data-max-guests="12"
+            data-search="swat swat valley malam jabba mahodand kalam khyber pakhtunkhwa cultural tour"
+          >
+            <div class="option-card-image">
+              <img src="assets/northern-areas.png" alt="Swat Valley Cultural Tour" loading="lazy" />
+              <span class="option-tier">PKR 19,999 / person</span>
+            </div>
+            <div class="option-card-body">
+              <p class="option-region">Khyber Pakhtunkhwa</p>
+              <h2 class="option-title">Swat Valley Cultural Tour</h2>
+              <p class="option-destination"><span>📍</span> Swat</p>
+              <ul class="option-highlights">
+                <li>Malam Jabba</li>
+                <li>Mahodand Lake</li>
+                <li>Buddhist trails</li>
+              </ul>
+              <div class="option-meta">
+                <span>6 days / 5 nights</span>
+                <span>Up to 12 guests</span>
+              </div>
+              <div class="option-footer">
+                <div class="option-price">
+                  <strong>PKR 19,999</strong>
+                  <span class="option-price-note">per person</span>
+                  <p class="option-price-total option-price-total-js" hidden></p>
+                </div>
+                <a class="btn-primary btn-primary--round option-book" href="booking.html?tour=swat">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="option-card"
+            data-price="24999"
+            data-max-guests="8"
+            data-search="naltar khunjerab pass gilgit-baltistan naltar valley colorful lakes"
+          >
+            <div class="option-card-image">
+              <img src="assets/hero-bg.png" alt="Naltar and Khunjerab Pass" loading="lazy" />
+              <span class="option-tier">PKR 24,999 / person</span>
+            </div>
+            <div class="option-card-body">
+              <p class="option-region">Gilgit-Baltistan</p>
+              <h2 class="option-title">Naltar &amp; Khunjerab Pass</h2>
+              <p class="option-destination"><span>📍</span> Naltar</p>
+              <ul class="option-highlights">
+                <li>Naltar ski slopes</li>
+                <li>Khunjerab Pass</li>
+                <li>Colorful lakes</li>
+              </ul>
+              <div class="option-meta">
+                <span>8 days / 7 nights</span>
+                <span>Up to 8 guests</span>
+              </div>
+              <div class="option-footer">
+                <div class="option-price">
+                  <strong>PKR 24,999</strong>
+                  <span class="option-price-note">per person</span>
+                  <p class="option-price-total option-price-total-js" hidden></p>
+                </div>
+                <a class="btn-primary btn-primary--round option-book" href="booking.html?tour=naltar">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="option-card"
+            data-price="29999"
+            data-max-guests="6"
+            data-search="chitral kalash valleys khyber pakhtunkhwa luxury chitral kalash"
+          >
+            <div class="option-card-image">
+              <img src="assets/northern-areas.png" alt="Luxury Chitral and Kalash" loading="lazy" />
+              <span class="option-tier">PKR 29,999 / person</span>
+            </div>
+            <div class="option-card-body">
+              <p class="option-region">Khyber Pakhtunkhwa</p>
+              <h2 class="option-title">Luxury Chitral &amp; Kalash</h2>
+              <p class="option-destination"><span>📍</span> Chitral</p>
+              <ul class="option-highlights">
+                <li>Kalash valleys</li>
+                <li>Private guide</li>
+                <li>Boutique stays</li>
+              </ul>
+              <div class="option-meta">
+                <span>9 days / 8 nights</span>
+                <span>Up to 6 guests</span>
+              </div>
+              <div class="option-footer">
+                <div class="option-price">
+                  <strong>PKR 29,999</strong>
+                  <span class="option-price-note">per person</span>
+                  <p class="option-price-total option-price-total-js" hidden></p>
+                </div>
+                <a class="btn-primary btn-primary--round option-book" href="booking.html?tour=chitral">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="option-card"
+            data-price="14999"
+            data-max-guests="15"
+            data-search="murree punjab mall road patriata nathia gali weekend escape"
+          >
+            <div class="option-card-image">
+              <img src="assets/hero-bg.png" alt="Murree Weekend Escape" loading="lazy" />
+              <span class="option-tier">PKR 14,999 / person</span>
+            </div>
+            <div class="option-card-body">
+              <p class="option-region">Punjab</p>
+              <h2 class="option-title">Murree Weekend Escape</h2>
+              <p class="option-destination"><span>📍</span> Murree</p>
+              <ul class="option-highlights">
+                <li>Mall Road</li>
+                <li>Patriata</li>
+                <li>Hill station views</li>
+              </ul>
+              <div class="option-meta">
+                <span>3 days / 2 nights</span>
+                <span>Up to 15 guests</span>
+              </div>
+              <div class="option-footer">
+                <div class="option-price">
+                  <strong>PKR 14,999</strong>
+                  <span class="option-price-note">per person</span>
+                  <p class="option-price-total option-price-total-js" hidden></p>
+                </div>
+                <a class="btn-primary btn-primary--round option-book" href="booking.html?tour=murree">Book Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="option-card"
+            data-price="14999"
+            data-max-guests="10"
+            data-search="naran kaghan saif ul malook babusar lulusar lake kaghan naran odyssey"
+          >
+            <div class="option-card-image">
+              <img src="assets/northern-areas.png" alt="Kaghan and Naran Odyssey" loading="lazy" />
+              <span class="option-tier">PKR 14,999 / person</span>
+            </div>
+            <div class="option-card-body">
+              <p class="option-region">Khyber Pakhtunkhwa</p>
+              <h2 class="option-title">Kaghan &amp; Naran Odyssey</h2>
+              <p class="option-destination"><span>📍</span> Naran</p>
+              <ul class="option-highlights">
+                <li>Lake Saif-ul-Malook</li>
+                <li>Babusar Pass</li>
+                <li>Lulusar Lake</li>
+              </ul>
+              <div class="option-meta">
+                <span>6 days / 5 nights</span>
+                <span>Up to 10 guests</span>
+              </div>
+              <div class="option-footer">
+                <div class="option-price">
+                  <strong>PKR 14,999</strong>
+                  <span class="option-price-note">per person</span>
+                  <p class="option-price-total option-price-total-js" hidden></p>
+                </div>
+                <a class="btn-primary btn-primary--round option-book" href="booking.html?tour=naran">Book Now</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer options-footer">
+      <div class="container footer-bottom">
+        <p>Copyright © 2024 Safar-E-Shimal. All rights reserved.</p>
+        <a href="index.html">Return to landing page</a>
+      </div>
+    </footer>
+
+    <script src="js/search-ui.js"></script>
+    <script>
+      (function () {
+        function formatPkr(value) {
+          return "PKR " + value.toLocaleString("en-US");
+        }
+
+        function getParams() {
+          var p = new URLSearchParams(window.location.search);
+          var guestRaw = p.get("guest_count") || p.get("guests") || "";
+          var guestCount = parseInt(guestRaw, 10);
+          if (isNaN(guestCount) || guestCount < 1) {
+            var m = guestRaw.match(/(\d+)/);
+            guestCount = m ? parseInt(m[1], 10) : 0;
+          }
+          return {
+            destination: (p.get("destination") || "").trim(),
+            checkin: (p.get("checkin") || "").trim(),
+            pricing: (p.get("pricing") || "").trim(),
+            guestCount: guestCount,
+            guests: guestRaw,
+          };
+        }
+
+        function matchesDestination(searchText, query) {
+          if (!query) return true;
+          var q = query.toLowerCase();
+          var words = q.split(/\s+/).filter(function (w) {
+            return w.length > 1;
+          });
+          if (words.length === 0) return searchText.indexOf(q) !== -1;
+          return words.some(function (word) {
+            return searchText.indexOf(word) !== -1;
+          });
+        }
+
+        function matchesPricing(price, pricing) {
+          if (!pricing) return true;
+          if (pricing === "economy") return price < 15000;
+          if (pricing === "standard") return price >= 15000 && price <= 20000;
+          if (pricing === "premium") return price > 20000 && price <= 25000;
+          if (pricing === "luxury") return price > 25000;
+          return true;
+        }
+
+        function getPricingLabel(pricing) {
+          var labels = {
+            economy: "Under PKR 15,000",
+            standard: "PKR 15,000 to PKR 20,000",
+            premium: "PKR 20,000 to PKR 25,000",
+            luxury: "PKR 25,000+",
+          };
+          return labels[pricing] || "";
+        }
+
+        function applyFilters() {
+          var criteria = getParams();
+          var cards = document.querySelectorAll(".option-card");
+          var visible = 0;
+          var currentParams = new URLSearchParams(window.location.search);
+
+          cards.forEach(function (card) {
+            var searchText = (card.getAttribute("data-search") || "").toLowerCase();
+            var maxGuests = parseInt(card.getAttribute("data-max-guests"), 10) || 99;
+            var price = parseInt(card.getAttribute("data-price"), 10) || 0;
+            var show = matchesDestination(searchText, criteria.destination);
+            show = show && matchesPricing(price, criteria.pricing);
+            if (criteria.guestCount > 0) {
+              show = show && maxGuests >= criteria.guestCount;
+            }
+            card.style.display = show ? "" : "none";
+            if (show) visible++;
+
+            var totalEl = card.querySelector(".option-price-total-js");
+            if (totalEl && criteria.guestCount > 0 && show) {
+              totalEl.hidden = false;
+              totalEl.innerHTML =
+                "Trip total: <strong>" +
+                formatPkr(criteria.guestCount * price) +
+                "</strong> (" +
+                criteria.guestCount +
+                " guest" +
+                (criteria.guestCount === 1 ? "" : "s") +
+                " x " +
+                formatPkr(price) +
+                ")";
+            } else if (totalEl) {
+              totalEl.hidden = true;
+            }
+
+            var bookLink = card.querySelector(".option-book");
+            if (bookLink) {
+              var href = new URL(bookLink.getAttribute("href"), window.location.href);
+              ["checkin", "guest_count", "guests"].forEach(function (key) {
+                if (currentParams.get(key)) {
+                  href.searchParams.set(key, currentParams.get(key));
+                }
+              });
+              bookLink.href = href.pathname.split("/").pop() + href.search;
+            }
+          });
+
+          var countEl = document.getElementById("results-count");
+          if (countEl) {
+            countEl.textContent =
+              visible +
+              " package" + (visible === 1 ? "" : "s") + " found";
+          }
+
+          var emptyEl = document.getElementById("options-empty");
+          if (emptyEl) {
+            if (visible === 0) {
+              emptyEl.removeAttribute("hidden");
+            } else {
+              emptyEl.setAttribute("hidden", "hidden");
+            }
+          }
+
+          var summary = document.getElementById("search-summary");
+          if (summary) {
+            var chips = [];
+            if (criteria.destination) {
+              chips.push(
+                "<span class=\"filter-chip\"><strong>Destination:</strong> " +
+                  criteria.destination +
+                  "</span>"
+              );
+            }
+            if (criteria.checkin) {
+              chips.push(
+                "<span class=\"filter-chip\"><strong>Dates:</strong> " +
+                  criteria.checkin +
+                  "</span>"
+              );
+            }
+            if (criteria.guestCount > 0) {
+              chips.push(
+                "<span class=\"filter-chip\"><strong>Guests:</strong> " +
+                  criteria.guestCount +
+                  "</span>"
+              );
+            }
+            if (criteria.pricing) {
+              chips.push(
+                "<span class=\"filter-chip\"><strong>Budget:</strong> " +
+                  getPricingLabel(criteria.pricing) +
+                  "</span>"
+              );
+            }
+            summary.innerHTML = chips.join("");
+          }
+
+          var form = document.getElementById("options-search-form");
+          if (form) {
+            var dest = form.querySelector('[name="destination"]');
+            var checkin = form.querySelector('[name="checkin"]');
+            var guests = form.querySelector('[name="guests"]');
+            var guestHidden = form.querySelector('[name="guest_count"]');
+            var pricing = form.querySelector('[name="pricing"]');
+            if (dest) dest.value = criteria.destination;
+            if (checkin && criteria.checkin) checkin.value = criteria.checkin;
+            if (pricing) pricing.value = criteria.pricing;
+            if (criteria.guestCount > 0 && guests) {
+              var label =
+                criteria.guestCount === 1 ? "1 Guest" : criteria.guestCount + " Guests";
+              guests.value = label;
+              guests.dataset.guestCount = String(criteria.guestCount);
+              if (guestHidden) guestHidden.value = String(criteria.guestCount);
+            }
+          }
+        }
+
+        function run() {
+          if (typeof initSearchForms === "function") {
+            try {
+              initSearchForms();
+            } catch (e) {
+              console.warn("search-ui:", e);
+            }
+          }
+          applyFilters();
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", run);
+        } else {
+          run();
+        }
+        window.addEventListener("load", applyFilters);
+      })();
+    </script>
+  </body>
+</html>
